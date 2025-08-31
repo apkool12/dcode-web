@@ -5,7 +5,6 @@ import react from "@vitejs/plugin-react";
 export default defineConfig({
   plugins: [react()],
   base: "/dcode-web/",
-  publicDir: "public",
   server: {
     allowedHosts: ["77adf2d21068.ngrok-free.app"],
   },
