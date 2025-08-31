@@ -1,0 +1,409 @@
+.journey-planning-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #f8f9fa;
+  display: flex;
+  flex-direction: column;
+  z-index: 1000;
+  font-family: "AppleSDGothicNeoM", sans-serif;
+}
+
+/* 헤더 */
+.journey-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 24px;
+  background-color: #ffffff;
+  border-bottom: 1px solid #e9ecef;
+}
+
+.logo-text {
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+  font-family: "AppleSDGothicNeoH", sans-serif;
+}
+
+.logo-blue {
+  color: #674ab9;
+}
+
+.header-icons {
+  display: flex;
+  gap: 16px;
+}
+
+.icon-button {
+  background: none;
+  border: none;
+  color: #333;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.2s ease;
+  position: relative;
+}
+
+.icon-button:hover {
+  background-color: #f0f0f0;
+}
+
+.journey-notification-badge {
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  background-color: #ff4757;
+  color: white;
+  border-radius: 50%;
+  width: 16px;
+  height: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
+  font-weight: 600;
+  border: 2px solid white;
+}
+
+/* 메인 컨텐츠 */
+.journey-content {
+  flex: 1;
+  padding: 24px;
+  overflow-y: auto;
+}
+
+/* 제목 배너 */
+.title-banner {
+  background: linear-gradient(180deg, #2e2153 0%, #674ab9 100%);
+  border-radius: 20px;
+  padding: 32px 24px;
+  margin-bottom: 32px;
+  text-align: center;
+  color: #ffffff;
+}
+
+.journey-main-title {
+  font-size: 25px;
+  font-weight: 400;
+  margin: 0 0 10px 0;
+  font-family: "AppleSDGothicNeoH", sans-serif;
+}
+
+.subtitle {
+  font-size: 12px;
+  margin: 0;
+  opacity: 0.9;
+  font-family: "AppleSDGothicNeoM", sans-serif;
+}
+
+/* 타임라인은 TimelineContainer 컴포넌트에서 관리됩니다 */
+
+/* 선택된 목적지 카드 스타일 - LocationCard와 동일 */
+.selected-destination-container {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  width: 100%;
+  border-radius: 16px;
+  padding: 12px 0;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  position: relative;
+}
+
+.selected-destination-card {
+  width: 100px;
+  height: 100px;
+  border-radius: 20px;
+  background: linear-gradient(180deg, #2d1f53 0%, #674ab9 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 6px 20px rgba(103, 74, 185, 0.25);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.selected-destination-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    45deg,
+    transparent 30%,
+    rgba(255, 255, 255, 0.1) 50%,
+    transparent 70%
+  );
+  transform: translateX(-100%);
+  transition: transform 0.6s ease;
+}
+
+.selected-destination-card:hover::before {
+  transform: translateX(100%);
+}
+
+.selected-destination-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 25px rgba(103, 74, 185, 0.35);
+}
+
+.selected-destination-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+  align-items: flex-start;
+}
+
+.selected-destination-name {
+  font-size: 25px;
+  font-weight: bold;
+  color: #674ab9;
+  font-family: "AppleSDGothicNeoH", sans-serif;
+  letter-spacing: -0.5px;
+  text-align: left;
+}
+
+.selected-destination-status {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-left: -10px;
+  margin-bottom: 12px;
+  padding: 6px 12px;
+  border-radius: 12px;
+  align-self: flex-start;
+}
+
+.selected-status-text {
+  font-size: 14px;
+  color: #674ab9;
+  font-family: "AppleSDGothicNeoM", sans-serif;
+  font-weight: 500;
+}
+
+.selected-destination-tags {
+  display: flex;
+  gap: 5px;
+  flex-wrap: wrap;
+  align-self: flex-start;
+  max-width: 200px;
+}
+
+.selected-tag {
+  padding: 4px 8px;
+  border-radius: 12px;
+  font-size: 11px;
+  font-weight: 600;
+  font-family: "AppleSDGothicNeoM", sans-serif;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  transition: all 0.3s ease;
+  border: 1px solid transparent;
+  width: fit-content;
+}
+
+.selected-tag:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.selected-tag.conversation {
+  background: #89d27a;
+  color: #ffffff;
+  white-space: nowrap;
+}
+
+.selected-tag.conversation svg {
+  color: #ffffff;
+}
+
+.selected-tag.puzzle {
+  background: #b69cfe;
+  color: #ffffff;
+  white-space: nowrap;
+}
+
+.selected-tag.puzzle svg {
+  color: #ffffff;
+}
+
+.remove-destination-btn {
+  background: none;
+  border: none;
+  color: #999;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  padding: 4px 8px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  line-height: 1;
+  z-index: 10;
+}
+
+.remove-destination-btn:hover {
+  background-color: rgba(255, 0, 0, 0.1);
+  color: #ff4444;
+  transform: scale(1.1);
+}
+
+.remove-destination-btn:active {
+  transform: scale(0.95);
+}
+
+/* 공통 컴포넌트 스타일들은 각각의 CSS 파일에서 관리됩니다 */
+
+/* 하단 버튼 */
+.journey-footer {
+  padding: 24px;
+  background-color: #ffffff;
+  border-top: 1px solid #e9ecef;
+}
+
+.proceed-button {
+  width: 100%;
+  background: linear-gradient(135deg, #674ab9 0%, #8b6fd8 100%);
+  color: #ffffff;
+  border: none;
+  padding: 16px;
+  border-radius: 25px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+  font-family: "AppleSDGothicNeoB", sans-serif;
+  box-shadow: 0 4px 12px rgba(103, 74, 185, 0.3);
+}
+
+.proceed-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(103, 74, 185, 0.4);
+}
+
+.proceed-button:active {
+  transform: translateY(0);
+}
+
+/* 모바일 반응형 */
+@media (max-width: 768px) {
+  .journey-header {
+    padding: 16px 20px;
+  }
+
+  .journey-content {
+    padding: 20px;
+  }
+
+  .title-banner {
+    padding: 24px 20px;
+    margin-bottom: 24px;
+  }
+
+  /* 공통 컴포넌트의 반응형 스타일은 각각의 CSS 파일에서 관리됩니다 */
+
+  .journey-footer {
+    padding: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .journey-header {
+    padding: 12px 16px;
+  }
+
+  .journey-content {
+    padding: 16px;
+  }
+
+  .title-banner {
+    padding: 20px 16px;
+    margin-bottom: 20px;
+  }
+  .selected-destination-container {
+    padding: 10px 0;
+  }
+
+  .selected-destination-card {
+    width: 80px;
+    height: 80px;
+  }
+
+  .selected-destination-name {
+    font-size: 20px;
+  }
+
+  .selected-destination-status {
+    margin-bottom: 8px;
+  }
+
+  .selected-status-text {
+    font-size: 12px;
+  }
+
+  .selected-tag {
+    padding: 3px 6px;
+    font-size: 10px;
+  }
+
+  .remove-destination-btn {
+    font-size: 16px;
+    padding: 3px 6px;
+    top: -10px;
+    right: -10px;
+  }
+
+  .location-card,
+  .add-destination-btn {
+    width: 50px;
+    height: 50px;
+  }
+
+  .location-name {
+    font-size: 15px;
+  }
+
+  .location-status {
+    margin-bottom: 6px;
+  }
+
+  .status-text {
+    font-size: 12px;
+  }
+
+  .tag {
+    padding: 3px 6px;
+  }
+
+  .destination-text {
+    font-size: 13px;
+  }
+
+  .journey-footer {
+    padding: 16px;
+  }
+
+  .proceed-button {
+    padding: 14px;
+    font-size: 15px;
+  }
+}

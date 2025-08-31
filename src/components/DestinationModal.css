@@ -1,0 +1,293 @@
+.destination-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999999;
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  isolation: isolate;
+}
+
+.destination-modal-container {
+  width: 85%;
+  max-width: 400px;
+  background-color: #ffffff;
+  border-radius: 25px;
+  padding: 25px 20px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 25px 80px rgba(0, 0, 0, 0.5);
+  max-height: 80vh;
+  overflow-y: auto;
+  position: relative;
+  z-index: 1000000;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  isolation: isolate;
+}
+
+/* 헤더 */
+.destination-modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.back-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #674ab9;
+  transition: background-color 0.2s ease;
+}
+
+.back-button:hover {
+  background-color: rgba(103, 74, 185, 0.1);
+}
+
+.modal-title {
+  font-family: "AppleSDGothicNeoH", sans-serif;
+  font-size: 20px;
+  font-weight: bold;
+  color: #333;
+  flex: 1;
+  text-align: center;
+}
+
+.header-spacer {
+  width: 40px;
+}
+
+/* 설명 */
+.destination-description {
+  font-size: 14px;
+  color: #666;
+  text-align: center;
+  margin-bottom: 25px;
+  font-family: "AppleSDGothicNeoM", sans-serif;
+}
+
+/* 목적지 목록 */
+.destination-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 25px;
+}
+
+.destination-item {
+  display: flex;
+  align-items: center;
+  padding: 16px 20px;
+  background-color: #fff;
+  border-radius: 16px;
+  border: 2px solid #f0f0f0;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.destination-item:hover {
+  border-color: #674ab9;
+  box-shadow: 0 2px 12px rgba(103, 74, 185, 0.15);
+  transform: translateY(-1px);
+}
+
+.destination-item.selected {
+  border-color: #674ab9;
+  background-color: rgba(103, 74, 185, 0.05);
+  box-shadow: 0 4px 20px rgba(103, 74, 185, 0.2);
+}
+
+.destination-icon {
+  margin-right: 15px;
+  color: #674ab9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.destination-name {
+  flex: 1;
+  font-size: 16px;
+  font-weight: 500;
+  color: #333;
+  font-family: "AppleSDGothicNeoM", sans-serif;
+}
+
+.destination-distance {
+  font-size: 12px;
+  color: #666;
+  font-family: "AppleSDGothicNeoM", sans-serif;
+  font-weight: 400;
+  margin-left: 12px;
+  padding: 2px 8px;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  border: 1px solid #e9ecef;
+}
+
+.selected-indicator {
+  color: #674ab9;
+  font-size: 18px;
+  font-weight: bold;
+  margin-left: 10px;
+}
+
+.no-destinations-message {
+  text-align: center;
+  padding: 40px 20px;
+  color: #999;
+  font-size: 16px;
+  font-family: "AppleSDGothicNeoM", sans-serif;
+  background-color: #f8f9fa;
+  border-radius: 16px;
+  border: 2px dashed #e9ecef;
+}
+
+/* 버튼 영역 */
+.destination-button-row {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin-top: 10px;
+}
+
+.confirm-button {
+  width: 100%;
+  max-width: 200px;
+  background-color: #f0f0f0;
+  padding: 14px 20px;
+  border-radius: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: "AppleSDGothicNeoB", sans-serif;
+}
+
+.confirm-button.active {
+  background-color: #674ab9;
+  color: white;
+  box-shadow: 0 4px 15px rgba(103, 74, 185, 0.3);
+}
+
+.confirm-button.active:hover {
+  background-color: #5a3fa0;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(103, 74, 185, 0.4);
+}
+
+.confirm-button.disabled {
+  background-color: #f0f0f0;
+  color: #999;
+  cursor: not-allowed;
+}
+
+.confirm-text {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+/* 모달이 다른 요소들 위에 확실히 표시되도록 */
+.destination-modal-overlay * {
+  pointer-events: auto;
+}
+
+.destination-modal-container * {
+  pointer-events: auto;
+}
+
+/* 모바일 반응형 */
+@media (max-width: 768px) {
+  .destination-modal-container {
+    width: 90%;
+    padding: 20px 15px;
+  }
+
+  .modal-title {
+    font-size: 18px;
+  }
+
+  .destination-description {
+    font-size: 13px;
+    margin-bottom: 20px;
+  }
+
+  .destination-item {
+    padding: 14px 16px;
+  }
+
+  .destination-name {
+    font-size: 15px;
+  }
+
+  .destination-distance {
+    font-size: 11px;
+    padding: 1px 6px;
+    margin-left: 8px;
+  }
+
+  .confirm-button {
+    padding: 12px 18px;
+  }
+
+  .confirm-text {
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .destination-modal-container {
+    width: 95%;
+    padding: 15px 10px;
+  }
+
+  .destination-modal-header {
+    margin-bottom: 15px;
+  }
+
+  .modal-title {
+    font-size: 16px;
+  }
+
+  .destination-description {
+    font-size: 12px;
+    margin-bottom: 18px;
+  }
+
+  .destination-list {
+    gap: 10px;
+  }
+
+  .destination-item {
+    padding: 12px 14px;
+  }
+
+  .destination-name {
+    font-size: 14px;
+  }
+
+  .confirm-button {
+    padding: 10px 16px;
+  }
+
+  .confirm-text {
+    font-size: 14px;
+  }
+}

@@ -1,0 +1,19 @@
+.timeline-container {
+  position: relative;
+  padding-left: 62px;
+}
+
+/* 타임라인 수직선 - start에서 exit까지 연결 */
+.timeline-container::before {
+  content: "";
+  position: absolute;
+  left: 32px;
+  top: 13%;
+  bottom: 0;
+  width: 1.5px;
+  height: 70%;
+  background: linear-gradient(180deg, #674ab9 0%, #8b6fd8 50%, #674ab9 100%);
+  border-radius: 1px;
+  box-shadow: 0 0 10px rgba(103, 74, 185, 0.3);
+  z-index: 1;
+}

@@ -1,0 +1,487 @@
+.ending-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #ffffff;
+  z-index: 1000;
+  overflow: hidden;
+}
+
+.ending-background {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+/* 헤더 스타일 */
+.ending-header {
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  z-index: 10;
+}
+
+.ending-logo-text {
+  font-size: 24px;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+.ending-logo-blue {
+  color: #4aabf8;
+}
+
+.ending-logo-white {
+  color: #764ba2;
+}
+
+/* 크레딧 스타일 콘텐츠 */
+.ending-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  position: relative;
+  z-index: 10;
+  text-align: center;
+}
+
+/* 제목 스타일 */
+.ending-title {
+  opacity: 0;
+  transform: translateY(-30px);
+  transition: all 1s ease-out;
+  margin-bottom: 30px;
+}
+
+.ending-title.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.ending-title h1 {
+  font-size: 28px;
+  font-weight: bold;
+  color: #333333;
+  margin-bottom: 10px;
+}
+
+.ending-title .subtitle {
+  font-size: 16px;
+  color: #666666;
+  margin: 0;
+}
+
+/* 캐릭터 애니메이션 */
+.ending-characters {
+  opacity: 0;
+  transform: translateY(30px) scale(0.8);
+  transition: all 1s ease-out;
+  margin-bottom: 30px;
+}
+
+.ending-characters.show {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+.family-image {
+  width: 120px;
+  height: auto;
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+/* 선물 상자 스타일 */
+.ending-gift-box {
+  opacity: 0;
+  transform: scale(0.5);
+  transition: all 1.2s ease-out;
+  margin-bottom: 30px;
+}
+
+.ending-gift-box.show {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.gift-box-container {
+  position: relative;
+  display: inline-block;
+}
+
+.gift-box-icon {
+  width: 200px;
+  height: 200px;
+  color: #8b5cf6;
+  filter: drop-shadow(0 8px 16px rgba(139, 92, 246, 0.3));
+  animation: giftGlow 2s ease-in-out infinite alternate;
+}
+
+@keyframes giftGlow {
+  from {
+    filter: drop-shadow(0 8px 16px rgba(139, 92, 246, 0.3));
+  }
+  to {
+    filter: drop-shadow(0 8px 20px rgba(139, 92, 246, 0.5));
+  }
+}
+
+.gift-box-glow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 140px;
+  height: 140px;
+  background: radial-gradient(
+    circle,
+    rgba(139, 92, 246, 0.1) 0%,
+    transparent 70%
+  );
+  border-radius: 50%;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0.5;
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1.2);
+    opacity: 0.8;
+  }
+}
+
+/* 메시지 스타일 */
+.ending-message {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.8s ease-out;
+  margin-bottom: 30px;
+  width: 100%;
+  max-width: 300px;
+}
+
+.ending-message.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.ending-message-text {
+  text-align: center;
+  color: #333;
+}
+
+.gift-message {
+  font-family: "AppleSDGothicNeoH";
+  font-size: 20px;
+  font-weight: 600;
+  color: #2d1f53;
+  margin-bottom: 8px;
+}
+
+.gift-subtitle {
+  font-family: "AppleSDGothicNeoH";
+  font-size: 20px;
+  color: #2d1f53;
+}
+
+/* 방문한 장소들 스타일 */
+.ending-places {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 1s ease-out;
+  margin-bottom: 30px;
+  width: 100%;
+  max-width: 350px;
+}
+
+.ending-places.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.ending-places h2 {
+  font-size: 20px;
+  color: #333;
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+
+.places-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.place-item {
+  background: #f8f9fa;
+  border-radius: 12px;
+  padding: 12px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  transform: translateX(-20px);
+  animation: slideInFromLeft 0.6s ease-out forwards;
+}
+
+@keyframes slideInFromLeft {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.place-number {
+  background: linear-gradient(45deg, #8b5cf6, #a855f7);
+  color: white;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 12px;
+}
+
+.place-name {
+  flex: 1;
+  font-size: 14px;
+  font-weight: 500;
+  color: #333;
+  text-align: left;
+}
+
+.place-check {
+  color: #10b981;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+/* 실제 선물 스타일 */
+.ending-actual-gift {
+  opacity: 0;
+  transform: scale(0.8);
+  transition: all 1s ease-out;
+  margin-bottom: 30px;
+}
+
+.ending-actual-gift.show {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.gift-container {
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 25px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  border: 2px solid #f1f5f9;
+}
+
+.gift-icon {
+  font-size: 32px;
+  margin-bottom: 10px;
+  animation: bounce 2s ease-in-out infinite;
+}
+
+@keyframes bounce {
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-8px);
+  }
+  60% {
+    transform: translateY(-4px);
+  }
+}
+
+.gift-container h3 {
+  font-size: 18px;
+  color: #333;
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+
+.coupon {
+  font-family: "AppleSDGothicNeoH";
+  border-radius: 15px;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  color: #2d1f53;
+}
+
+.coupon-icon {
+  font-size: 24px;
+  background: rgba(255, 255, 255, 0.2);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.coupon-text {
+  flex: 1;
+  text-align: left;
+}
+
+.coupon-title {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.coupon-desc {
+  font-size: 12px;
+  opacity: 0.9;
+  margin-bottom: 4px;
+}
+
+.coupon-validity {
+  font-size: 11px;
+  opacity: 0.8;
+  font-style: italic;
+}
+
+.character-message {
+  margin-top: 15px;
+  color: #333;
+}
+
+.character-message p {
+  margin: 5px 0;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+/* 버튼 스타일 */
+.ending-button-container {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.8s ease-out;
+}
+
+.ending-button-container.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.ending-button {
+  background: transparent;
+  color: #b69cfe;
+  padding: 12px 30px;
+  border-radius: 25px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 0 2px 0 #674ab9;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.ending-button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(139, 92, 246, 0.1),
+    transparent
+  );
+  transition: left 0.5s;
+}
+
+.ending-button:hover::before {
+  left: 100%;
+}
+
+.ending-button:hover {
+  background: #b69cfe;
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(139, 92, 246, 0.3);
+}
+
+.ending-button:active {
+  transform: translateY(0);
+}
+
+/* 배경 효과 */
+.ending-effects {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.floating-particles {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.particle {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background: rgba(139, 92, 246, 0.3);
+  border-radius: 50%;
+  animation: float-particle linear infinite;
+}
+
+@keyframes float-particle {
+  0% {
+    transform: translateY(100vh) rotate(0deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-100px) rotate(360deg);
+    opacity: 0;
+  }
+}

@@ -1,0 +1,245 @@
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.recommended-modal-container {
+  width: 85%;
+  max-width: 400px;
+  background-color: rgba(255, 255, 255, 0.81);
+  border-radius: 25px;
+  padding: 25px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  backdrop-filter: blur(10px);
+}
+
+/* 기본 모달 뷰 */
+.banner-alert-container {
+  margin-top: 20px;
+  margin-bottom: 16px;
+}
+
+.banner-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.banner {
+  background-color: #674ab9;
+  padding: 6px 54px;
+  border-radius: 28px;
+  display: flex;
+  align-items: center;
+}
+
+.banner-text {
+  font-family: "AppleSDGothicNeoH", sans-serif;
+  color: #fff;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.alert-icon {
+  position: absolute;
+  right: -50px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #674ab9;
+}
+
+.icon-circle {
+  background-color: #674ab9;
+  padding: 20px;
+  border-radius: 50%;
+  margin-bottom: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.description {
+  font-size: 22px;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 6px;
+  color: #333;
+}
+
+.location-row {
+  display: flex;
+}
+
+.gps-icon {
+  margin-right: 4px;
+  transform: translateY(1.5px);
+  color: #674ab9;
+}
+
+.location-text {
+  font-size: 12px;
+  color: #674ab9;
+  font-weight: 400;
+}
+
+/* 버튼 영역 */
+.button-row {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  gap: 20px;
+}
+
+.reject-button {
+  width: 120px;
+  background-color: #fff;
+  padding: 10px;
+  border-radius: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 0.5px solid #674ab9;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.reject-button:hover {
+  background-color: #f8f8f8;
+}
+
+.accept-button {
+  width: 120px;
+  background-color: #fff;
+  padding: 10px;
+  border-radius: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 0.5px solid #674ab9;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.accept-button:hover {
+  background-color: #f8f8f8;
+}
+
+.reject-text {
+  color: #674ab9;
+  font-weight: 600;
+}
+
+.accept-text {
+  color: #674ab9;
+  font-weight: 600;
+}
+
+/* 모바일 반응형 */
+@media (max-width: 768px) {
+  .recommended-modal-container {
+    width: 90%;
+    padding: 20px 15px;
+  }
+
+  .banner-alert-container {
+    margin-bottom: 14px;
+  }
+
+  .banner {
+    padding: 6px 40px;
+  }
+
+  .banner-text {
+    font-size: 16px;
+  }
+
+  .alert-icon {
+    right: -40px;
+  }
+
+  .icon-circle {
+    padding: 15px;
+  }
+
+  .description {
+    font-size: 13px;
+  }
+
+  .button-row {
+    gap: 15px;
+  }
+
+  .reject-button,
+  .accept-button {
+    width: 100px;
+    padding: 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  .recommended-modal-container {
+    width: 95%;
+    padding: 15px 10px;
+  }
+
+  .banner-alert-container {
+    margint-bottom: 30px;
+  }
+
+  .banner {
+    padding: 5px 50px;
+  }
+
+  .banner-text {
+    font-size: 20px;
+  }
+
+  .alert-icon {
+    right: -50px;
+  }
+
+  .icon-circle {
+    padding: 12px;
+  }
+
+  .description {
+    font-size: 15px;
+  }
+
+  .location-text {
+    font-size: 11px;
+  }
+
+  .button-row {
+    gap: 12px;
+  }
+
+  .reject-button,
+  .accept-button {
+    width: 90px;
+    padding: 6px;
+  }
+
+  .reject-text,
+  .accept-text {
+    font-size: 14px;
+  }
+}

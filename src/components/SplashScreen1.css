@@ -1,0 +1,74 @@
+.splash-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #1c1e38;
+  padding-top: 100px;
+  padding-bottom: 40px;
+  box-sizing: border-box;
+}
+
+.splash1-logo-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.splash1-logo-text {
+  margin-left: -50px;
+  font-size: 84px;
+  font-weight: bold;
+  font-family: "NeoDunggeunmoPro-Regular", monospace;
+  color: #fff;
+  line-height: 1;
+}
+
+.d-blue {
+  color: #4aabf8;
+}
+
+.code {
+  color: #fff;
+}
+
+.splash1-subtitle {
+  font-size: 16px;
+  color: #ccc;
+  font-family: "NeoDunggeunmoPro-Regular", monospace;
+  margin-top: -5px;
+  margin-right: 185px;
+}
+
+.city-blue {
+  color: #4aabf8;
+}
+
+.city-name-container {
+  margin-right: 212px;
+  margin-top: 30px;
+  display: flex;
+  align-items: center;
+}
+
+.city-icon {
+  width: 15px;
+  height: 15px;
+  margin-right: 8px;
+  margin-top: -3px;
+  object-fit: contain;
+}
+
+.city-name {
+  font-family: "AppleSDGothicNeoL", sans-serif;
+  font-size: 15px;
+  color: #fff;
+}
+
+.city-image {
+  width: 400px;
+  height: 400px;
+  flex-shrink: 0;
+  object-fit: contain;
+}

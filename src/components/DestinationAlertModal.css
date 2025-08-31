@@ -1,0 +1,236 @@
+.destination-alert-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.destination-alert-modal-container {
+  background: white;
+  border-radius: 20px;
+  padding: 24px;
+  width: 90%;
+  max-width: 400px;
+  max-height: 80vh;
+  overflow-y: auto;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.destination-alert-modal-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.alert-modal-title {
+  font-size: 20px;
+  font-weight: 700;
+  color: #333;
+  text-align: center;
+}
+
+.destination-alert-description {
+  font-size: 14px;
+  color: #666;
+  text-align: center;
+  margin-bottom: 20px;
+  line-height: 1.4;
+}
+
+.destination-alert-list {
+  margin-bottom: 20px;
+}
+
+.destination-alert-item {
+  display: flex;
+  align-items: center;
+  padding: 12px 16px;
+  border: 2px solid #e0e0e0;
+  border-radius: 12px;
+  margin-bottom: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  position: relative;
+}
+
+.destination-alert-item:hover {
+  border-color: #674ab9;
+  background-color: #f8f5ff;
+}
+
+.destination-alert-item.selected {
+  border-color: #674ab9;
+  background-color: #f0ebff;
+}
+
+.destination-alert-icon {
+  margin-right: 12px;
+  color: #674ab9;
+}
+
+.destination-alert-name {
+  flex: 1;
+  font-size: 16px;
+  font-weight: 500;
+  color: #333;
+}
+
+.destination-alert-distance {
+  font-size: 14px;
+  color: #666;
+  margin-right: 8px;
+}
+
+.selected-alert-indicator {
+  color: #674ab9;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.selection-count {
+  text-align: center;
+  font-size: 14px;
+  color: #674ab9;
+  font-weight: 500;
+  margin-bottom: 16px;
+  padding: 8px;
+  background-color: #f0ebff;
+  border-radius: 8px;
+}
+
+.selected-order {
+  margin-bottom: 20px;
+  padding: 12px;
+  background-color: #f8f5ff;
+  border-radius: 12px;
+  border: 1px solid #e0d5ff;
+}
+
+.order-title {
+  font-size: 14px;
+  font-weight: 600;
+  color: #674ab9;
+  margin-bottom: 8px;
+  text-align: center;
+}
+
+.order-list {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.order-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 8px;
+  background-color: white;
+  border-radius: 8px;
+  border: 1px solid #e0d5ff;
+}
+
+.order-number {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  background-color: #674ab9;
+  color: white;
+  border-radius: 50%;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.order-destination {
+  font-size: 14px;
+  color: #333;
+  font-weight: 500;
+}
+
+.destination-alert-button-row {
+  display: flex;
+  gap: 12px;
+}
+
+.cancel-button {
+  flex: 1;
+  padding: 12px;
+  border: 2px solid #e0e0e0;
+  border-radius: 12px;
+  background: white;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.cancel-button:hover {
+  border-color: #ccc;
+  background-color: #f5f5f5;
+}
+
+.cancel-text {
+  font-size: 16px;
+  font-weight: 500;
+  color: #666;
+  text-align: center;
+}
+
+.set-all-button {
+  flex: 2;
+  padding: 12px;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.set-all-button.active {
+  background: linear-gradient(135deg, #674ab9, #8b5cf6);
+  color: white;
+}
+
+.set-all-button.active:hover {
+  background: linear-gradient(135deg, #5a3da0, #7c3aed);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(103, 74, 185, 0.3);
+}
+
+.set-all-button.disabled {
+  background: #e0e0e0;
+  color: #999;
+  cursor: not-allowed;
+}
+
+.set-all-text {
+  font-size: 16px;
+  font-weight: 600;
+  text-align: center;
+}
+
+/* 반응형 디자인 */
+@media (max-width: 480px) {
+  .destination-alert-modal-container {
+    width: 95%;
+    padding: 20px;
+  }
+
+  .destination-alert-item {
+    padding: 10px 12px;
+  }
+
+  .destination-alert-name {
+    font-size: 14px;
+  }
+
+  .destination-alert-distance {
+    font-size: 12px;
+  }
+}

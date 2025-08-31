@@ -1,0 +1,268 @@
+.recommended-detail-content {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  border-radius: 20px;
+  padding: 25px;
+  min-height: 550px;
+}
+
+.detail-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.back-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #674ab9;
+  position: absolute;
+  left: 0;
+  z-index: 10;
+}
+
+.detail-title-section {
+  text-align: center;
+  margin-bottom: 30px;
+  margin-top: 10px;
+}
+
+.modal-main-title {
+  font-size: 28px;
+  font-weight: bold;
+  color: #674ab9;
+  margin: 0 0 10px 0;
+  font-family: "AppleSDGothicNeoH", sans-serif;
+}
+
+.sub-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #674ab9;
+  margin: 0 0 20px 0;
+  font-family: "AppleSDGothicNeoB", sans-serif;
+}
+
+.title-divider {
+  height: 2px;
+  background: #674ab9;
+  width: 80%;
+  margin: 0 auto;
+  border-radius: 1px;
+}
+
+.detail-body {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  flex: 1;
+}
+
+.detail-location-info {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 8px;
+  width: 100%;
+  padding: 8px 0;
+  flex-direction: row;
+  flex-wrap: nowrap;
+}
+
+.location-icon {
+  color: #674ab9;
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.detail-location-text {
+  font-size: 14px;
+  color: #674ab9;
+  font-weight: 500;
+  font-family: "AppleSDGothicNeoM", sans-serif;
+  display: inline-block;
+  white-space: nowrap;
+  line-height: 1;
+}
+
+.info-section {
+  background: white;
+  border-radius: 12px;
+  padding: 18px;
+  box-shadow: 0 2px 8px rgba(103, 74, 185, 0.1);
+  width: 100%;
+}
+
+.info-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 0;
+}
+
+.info-label {
+  font-size: 14px;
+  font-weight: 600;
+  color: #674ab9;
+  font-family: "AppleSDGothicNeoB", sans-serif;
+}
+
+.info-value {
+  font-size: 14px;
+  color: #333;
+  font-weight: 500;
+  font-family: "AppleSDGothicNeoM", sans-serif;
+}
+
+.info-divider {
+  height: 1px;
+  background: #e0d5ff;
+  margin: 8px 0;
+}
+
+.synopsis-section {
+  margin-top: 15px;
+  width: 100%;
+}
+
+.synopsis-label {
+  font-size: 16px;
+  font-weight: bold;
+  color: #674ab9;
+  margin: 0 0 12px 0;
+  font-family: "AppleSDGothicNeoB", sans-serif;
+}
+
+.synopsis-box {
+  background: white;
+  border-radius: 12px;
+  padding: 18px;
+  box-shadow: 0 2px 8px rgba(103, 74, 185, 0.1);
+}
+
+.synopsis-box p {
+  font-size: 14px;
+  color: #333;
+  line-height: 1.6;
+  margin: 0 0 8px 0;
+  font-family: "AppleSDGothicNeoM", sans-serif;
+  text-align: center;
+}
+
+.synopsis-box p:last-child {
+  margin-bottom: 0;
+}
+
+.action-buttons {
+  display: flex;
+  gap: 15px;
+  margin-top: 30px;
+  width: 100%;
+}
+
+.reject-button,
+.accept-button {
+  flex: 1;
+  padding: 14px 24px;
+  border: 2px solid #e0d5ff;
+  border-radius: 12px;
+  background: white;
+  color: #674ab9;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-family: "AppleSDGothicNeoB", sans-serif;
+}
+
+.reject-button:hover,
+.accept-button:hover {
+  background: #f8f5ff;
+  border-color: #674ab9;
+}
+
+.accept-button {
+  background: #674ab9;
+  color: 674ab9;
+  border-color: #674ab9;
+}
+
+.accept-button:hover {
+  background: #5a3da0;
+}
+
+/* 모바일 반응형 */
+@media (max-width: 768px) {
+  .recommended-detail-content {
+    padding: 15px;
+    min-height: 450px;
+  }
+
+  .modal-main-title {
+    font-size: 20px;
+  }
+
+  .sub-title {
+    font-size: 14px;
+  }
+
+  .info-section,
+  .synopsis-box {
+    padding: 12px;
+  }
+
+  .action-buttons {
+    margin-top: 20px;
+  }
+
+  .reject-button,
+  .accept-button {
+    padding: 10px 16px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .recommended-detail-content {
+    padding: 12px;
+    min-height: 400px;
+  }
+
+  .modal-main-title {
+    font-size: 18px;
+  }
+
+  .sub-title {
+    font-size: 13px;
+  }
+
+  .info-section,
+  .synopsis-box {
+    padding: 10px;
+  }
+
+  .info-label,
+  .info-value,
+  .synopsis-box p {
+    font-size: 13px;
+  }
+
+  .action-buttons {
+    margin-top: 15px;
+    gap: 8px;
+  }
+
+  .reject-button,
+  .accept-button {
+    padding: 8px 12px;
+    font-size: 13px;
+  }
+}
