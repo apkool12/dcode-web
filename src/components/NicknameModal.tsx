@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./NicknameModal.css";
+import travelIcon from "../assets/icons/travel.svg";
 
 interface NicknameModalProps {
   visible: boolean;
@@ -74,7 +75,7 @@ const NicknameModal: React.FC<NicknameModalProps> = ({
         {/* 헤더 */}
         <div className="nickname-modal-header">
           <div className="welcome-icon">
-            <img src="/src/assets/icons/travel.svg" alt="여행" />
+            <img src={travelIcon} alt="여행" />
           </div>
           <h2 className="welcome-title">대전을 해석하실 준비가 되셨나요?</h2>
           <p className="welcome-subtitle">
