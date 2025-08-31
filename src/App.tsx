@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import SplashScreen1 from "./components/SplashScreen1";
 import SplashScreen2 from "./components/SplashScreen2";
 import MainScreen from "./components/MainScreen";

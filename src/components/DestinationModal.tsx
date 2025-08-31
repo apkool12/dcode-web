@@ -8,7 +8,7 @@ interface DestinationModalProps {
   onClose: () => void;
   onSelectDestination: (destination: string) => void;
   selectedDestinations?: string[];
-  currentLocation?: { lat: number; lng: number } | null;
+  currentLocation?: { lat: number; lng: number } | null | undefined;
 }
 
 const destinations = [
@@ -51,7 +51,7 @@ const calculateDistance = (
 // 목적지 거리 계산 함수 (currentLocation을 매개변수로 받음)
 const getDestinationDistance = (
   destinationName: string,
-  currentLocation: { lat: number; lng: number } | null
+  currentLocation: { lat: number; lng: number } | null | undefined
 ): string => {
   if (
     !currentLocation ||

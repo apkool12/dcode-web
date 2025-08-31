@@ -1,8 +1,6 @@
-import React from "react";
 import GroupIcon from "./icons/GroupIcon";
 import GpsIcon from "./icons/GpsIcon";
 import AlertIcon from "./icons/AlertIcon";
-import BackIcon from "./icons/BackIcon";
 import RecommendedDetailContent from "./RecommendedModalWithDetail";
 import "./RecommendedModal.css";
 

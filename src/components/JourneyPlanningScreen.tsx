@@ -26,7 +26,6 @@ interface JourneyPlanningScreenProps {
 }
 
 const JourneyPlanningScreen: React.FC<JourneyPlanningScreenProps> = ({
-  onClose,
   userNickname,
   onShowEnding,
 }) => {

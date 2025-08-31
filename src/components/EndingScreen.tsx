@@ -13,7 +13,6 @@ interface EndingScreenProps {
 
 const EndingScreen: React.FC<EndingScreenProps> = ({
   onClose,
-  uploadedImage,
   visitedPlaces = [],
   userNickname,
 }) => {

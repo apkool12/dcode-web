@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import "./ChatScreen.css";
-import chatBackground from "../assets/images/chat_background.png";
+
 import ggumdolMain from "../assets/images/ggumdol_main.png";
 import ggumdolImage from "../assets/images/ggumdol.png";
 import sendIcon from "../assets/icons/send.svg";
@@ -183,7 +183,6 @@ const conversationScenarios = {
 };
 
 const ChatScreen: React.FC<ChatScreenProps> = ({
-  onClose,
   destination,
   userNickname,
   onShowEnding,

@@ -6,7 +6,7 @@ interface DestinationAlertModalProps {
   visible: boolean;
   onClose: () => void;
   onSetAllDestinations: (destinations: string[]) => void;
-  currentLocation?: { lat: number; lng: number } | null;
+  currentLocation?: { lat: number; lng: number } | null | undefined;
 }
 
 const destinations = [
@@ -49,7 +49,7 @@ const calculateDistance = (
 // 목적지 거리 계산 함수
 const getDestinationDistance = (
   destinationName: string,
-  currentLocation: { lat: number; lng: number } | null
+  currentLocation: { lat: number; lng: number } | null | undefined
 ): string => {
   if (
     !currentLocation ||
