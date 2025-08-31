@@ -1,5 +1,6 @@
 import React from "react";
 import "./SplashScreen2.css";
+import ggumdolImage from "../assets/images/ggumdol.png";
 
 const SplashScreen2: React.FC = () => {
   return (
@@ -18,7 +19,7 @@ const SplashScreen2: React.FC = () => {
       </div>
 
       <img
-        src="/src/assets/images/ggumdol.png"
+        src={ggumdolImage}
         alt="꿈돌이"
         className="splash2-image"
       />

@@ -1,5 +1,7 @@
 import React from "react";
 import "./SplashScreen1.css";
+import daejeonImage from "../assets/images/daejeon.png";
+import cityPixelImage from "../assets/images/city-pixel.png";
 
 const SplashScreen1: React.FC = () => {
   return (
@@ -14,7 +16,7 @@ const SplashScreen1: React.FC = () => {
         </div>
         <div className="city-name-container">
           <img
-            src="/src/assets/images/daejeon.png"
+            src={daejeonImage}
             alt="대전"
             className="city-icon"
           />
@@ -23,7 +25,7 @@ const SplashScreen1: React.FC = () => {
       </div>
 
       <img
-        src="/src/assets/images/city-pixel.png"
+        src={cityPixelImage}
         alt="도시 픽셀"
         className="city-image"
       />

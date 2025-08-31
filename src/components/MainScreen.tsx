@@ -16,11 +16,21 @@ import {
 } from "../utils/notificationStorage";
 import "./MainScreen.css";
 
+// 이미지 import
+import daejeonImage from "../assets/images/daejeon.png";
+import ggumdolMainImage from "../assets/images/ggumdol_main.png";
+import familyImage from "../assets/images/family.png";
+import friendImage from "../assets/images/friend.png";
+import loverImage from "../assets/images/lover.png";
+import aloneImage from "../assets/images/alone.png";
+import bellIcon from "../assets/icons/bell.svg";
+import menuIcon from "../assets/icons/menu.svg";
+
 const OPTIONS = [
-  { label: "가족", image: "/src/assets/images/family.png" },
-  { label: "친구", image: "/src/assets/images/friend.png" },
-  { label: "연인", image: "/src/assets/images/lover.png" },
-  { label: "혼자", image: "/src/assets/images/alone.png" },
+  { label: "가족", image: familyImage },
+  { label: "친구", image: friendImage },
+  { label: "연인", image: loverImage },
+  { label: "혼자", image: aloneImage },
 ];
 
 interface MainScreenProps {
@@ -206,7 +216,7 @@ const MainScreen: React.FC<MainScreenProps> = ({ onShowEnding }) => {
             className="icon-button"
             onClick={() => setShowNotificationModal(true)}
           >
-            <img src="/src/assets/icons/bell.svg" alt="알림" className="icon" />
+            <img src={bellIcon} alt="알림" className="icon" />
             {unreadNotificationCount > 0 && (
               <span className="notification-badge">
                 {unreadNotificationCount}
@@ -217,7 +227,7 @@ const MainScreen: React.FC<MainScreenProps> = ({ onShowEnding }) => {
             className="icon-button"
             onClick={() => setShowMenuModal(true)}
           >
-            <img src="/src/assets/icons/menu.svg" alt="메뉴" className="icon" />
+            <img src={menuIcon} alt="메뉴" className="icon" />
           </button>
         </div>
       </div>
@@ -227,7 +237,7 @@ const MainScreen: React.FC<MainScreenProps> = ({ onShowEnding }) => {
         {showDaejeonNews ? (
           <div className="daejeon-news-container">
             <img
-              src="/src/assets/images/daejeon.png"
+              src={daejeonImage}
               alt="대전"
               className="daejeon-news-image"
             />
@@ -262,7 +272,7 @@ const MainScreen: React.FC<MainScreenProps> = ({ onShowEnding }) => {
 
             <div className="character-circle">
               <img
-                src="/src/assets/images/ggumdol_main.png"
+                src={ggumdolMainImage}
                 alt="꿈돌이"
                 className="character-image"
               />

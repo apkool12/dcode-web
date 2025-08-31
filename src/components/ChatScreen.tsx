@@ -7,6 +7,8 @@ import sendIcon from "../assets/icons/send.svg";
 import cameraIcon from "../assets/icons/camera.svg";
 import scrollIcon from "../assets/icons/scroll.svg";
 import locationCardIcon from "../assets/icons/location-card.svg";
+import bellIcon from "../assets/icons/bell.svg";
+import menuIcon from "../assets/icons/menu.svg";
 import NotificationModal from "./NotificationModal";
 import MenuModal from "./MenuModal";
 import gptService from "../services/gptService";
@@ -829,7 +831,7 @@ const ChatScreen: React.FC<ChatScreenProps> = ({
             onClick={() => setShowNotificationModal(true)}
           >
             <img
-              src="/src/assets/icons/bell.svg"
+              src={bellIcon}
               alt="알림"
               className="chat-icon"
             />
@@ -844,7 +846,7 @@ const ChatScreen: React.FC<ChatScreenProps> = ({
             onClick={() => setShowMenuModal(true)}
           >
             <img
-              src="/src/assets/icons/menu.svg"
+              src={menuIcon}
               alt="메뉴"
               className="chat-icon"
             />
