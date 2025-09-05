@@ -210,7 +210,7 @@ class GPTService {
   }
 
   // 컨텍스트 인식 개선을 위한 추가 함수
-  getContextualPrompt(userMessage: string, destination: string): string {
+  getContextualPrompt(userMessage: string): string {
     const lowerMessage = userMessage.toLowerCase();
 
     // 특정 키워드에 따른 컨텍스트 힌트
