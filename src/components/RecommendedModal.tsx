@@ -59,7 +59,7 @@ const RecommendedModal = ({
 
             <div className="location-row">
               <GpsIcon width={14} height={14} className="gps-icon" />
-              <div className="location-text">대전역 · 822m</div>
+              <div className="location-text">대전역</div>
             </div>
           </>
         )}

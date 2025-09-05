@@ -22,6 +22,10 @@
 # 의존성 설치
 npm install
 
+# 환경 변수 설정 (로컬 개발용)
+cp .env.example .env.local
+# .env.local 파일에서 VITE_OPENAI_API_KEY를 실제 API 키로 변경
+
 # 개발 서버 실행
 npm run dev
 
@@ -31,6 +35,21 @@ npm run build
 # 빌드 미리보기
 npm run preview
 ```
+
+## API 키 설정
+
+### 로컬 개발 환경
+
+1. `.env.example` 파일을 `.env.local`로 복사
+2. `.env.local` 파일에서 `VITE_OPENAI_API_KEY`를 실제 API 키로 변경
+
+### GitHub 배포
+
+1. GitHub 저장소 Settings > Secrets and variables > Actions
+2. `OPENAI_API_KEY` 이름으로 API 키 추가
+3. 자동 배포 시 API 키가 안전하게 주입됩니다
+
+자세한 배포 가이드는 [DEPLOYMENT_GUIDE.md](./DEPLOYMENT_GUIDE.md)를 참고하세요.
 
 ## 프로젝트 구조
 

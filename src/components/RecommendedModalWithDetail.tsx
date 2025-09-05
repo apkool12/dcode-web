@@ -31,7 +31,7 @@ const RecommendedDetailContent: React.FC<RecommendedDetailContentProps> = ({
       <div className="detail-body">
         <div className="detail-location-info">
           <GpsIcon width={16} height={16} className="location-icon" />
-          <span className="detail-location-text">국립중앙과학관 · 822m</span>
+          <span className="detail-location-text">대전역</span>
         </div>
 
         <div className="info-section">
