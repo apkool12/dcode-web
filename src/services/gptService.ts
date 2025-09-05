@@ -137,7 +137,7 @@ class GPTService {
           Authorization: `Bearer ${this.apiKey}`,
         },
         body: JSON.stringify({
-          model: "gpt-5",
+          model: "gpt-4o-mini",
           messages: messages,
           max_tokens: 200, // 적절한 응답 길이
           temperature: 0.85, // 더 창의적이고 자연스러운 응답
@@ -239,7 +239,14 @@ class GPTService {
     if (error.message?.includes("401")) {
       return "앗, API 키 문제가 있는 것 같아요! 😅 잠시만 기다려주세요!";
     } else if (error.message?.includes("429")) {
-      return "우와, 너무 많은 질문을 한 번에 받았어요! 😵 잠깐만 쉬었다가 다시 얘기해요~";
+      if (
+        error.message?.includes("quota") ||
+        error.message?.includes("insufficient_quota")
+      ) {
+        return "어라? 오늘 너무 많이 대화해서 에너지가 부족해졌어요! 🔋 내일 다시 만나요~ (API 할당량이 초과되었습니다)";
+      } else {
+        return "우와, 너무 많은 질문을 한 번에 받았어요! 😵 잠깐만 쉬었다가 다시 얘기해요~";
+      }
     } else if (error.message?.includes("500")) {
       return "어라? 서버에 문제가 생긴 것 같아요. 🔧 조금만 기다려주실래요?";
     } else {
