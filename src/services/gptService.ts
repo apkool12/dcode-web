@@ -137,7 +137,7 @@ class GPTService {
           Authorization: `Bearer ${this.apiKey}`,
         },
         body: JSON.stringify({
-          model: "gpt-5o-mini",
+          model: "gpt-5",
           messages: messages,
           max_tokens: 200, // 적절한 응답 길이
           temperature: 0.85, // 더 창의적이고 자연스러운 응답
