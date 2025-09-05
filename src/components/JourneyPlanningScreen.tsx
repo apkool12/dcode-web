@@ -26,6 +26,7 @@ interface JourneyPlanningScreenProps {
 }
 
 const JourneyPlanningScreen: React.FC<JourneyPlanningScreenProps> = ({
+  onClose,
   userNickname,
   onShowEnding,
 }) => {
@@ -192,7 +193,11 @@ const JourneyPlanningScreen: React.FC<JourneyPlanningScreenProps> = ({
     <div className="journey-planning-container">
       {/* 헤더 */}
       <div className="journey-header">
-        <div className="logo-text">
+        <div
+          className="logo-text"
+          onClick={onClose}
+          style={{ cursor: "pointer" }}
+        >
           <span className="logo-blue">D</span>-CODE
         </div>
         <div className="header-icons">
